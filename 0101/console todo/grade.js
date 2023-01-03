@@ -5,7 +5,7 @@ const reader = readline.createInterface({
     output: process.stdout,
 });
 
-reader.setPrompt("명령하세요: ");
+reader.setPrompt('명령하세요: ("exit" to fisnish) ');
 reader.prompt();
 
 reader.on("line", (line) => {
@@ -23,6 +23,7 @@ reader.on("line", (line) => {
             showRes.show(inputWords[1]);
         }
         else{
+            // 보완 사항 : 이상한 입력 값이 들어와도 show$all 이 수행된다
             // delete
             if(inputWords[0]=='delete'){
                 const deleteRes = require('./delete');

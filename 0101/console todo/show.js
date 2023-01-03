@@ -1,4 +1,4 @@
-const todos = require("./todos");
+const todos = require("./todos")["todos"];
 
 function show(toCount) {
     let todoList = [];
@@ -6,15 +6,15 @@ function show(toCount) {
     let doneList = [];
     
 
-    for(let i=0;i<todos["todos"].length;i++) {
-        if(todos["todos"][i].status === "todo") {
-            todoList.push(`${todos["todos"][i].name}, ${todos["todos"][i].id}번`)
+    for(let i=0;i<todos.length;i++) {
+        if(todos[i].status === "todo") {
+            todoList.push(`${todos[i].name}, ${todos[i].id}번`)
         }
-        else if(todos["todos"][i].status === "doing") {
-            doingList.push(`${todos["todos"][i].name}, ${todos["todos"][i].id}번`)
+        else if(todos[i].status === "doing") {
+            doingList.push(`${todos[i].name}, ${todos[i].id}번`)
         }
-        else if(todos["todos"][i].status === "done") {
-            doneList.push(`${todos["todos"][i].name}, ${todos["todos"][i].id}번`)
+        else if(todos[i].status === "done") {
+            doneList.push(`${todos[i].name}, ${todos[i].id}번`)
         }
     }
 
