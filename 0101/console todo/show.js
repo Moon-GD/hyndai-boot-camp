@@ -26,6 +26,10 @@ function show(toCount) {
         
         for(let i=0;i<todoList.length;i++) {
             process.stdout.write(`'${todoList[i]}'`);
+
+            if(i != todoList.length - 1) {
+                process.stdout.write(' , ')
+            }
         }
 
         console.log('')
@@ -35,6 +39,10 @@ function show(toCount) {
         
         for(let i=0;i<doingList.length;i++) {
             process.stdout.write(`'${doingList[i]}'`);
+
+            if(i != todoList.length - 1) {
+                process.stdout.write(' , ')
+            }
         }
 
         console.log('')
@@ -44,6 +52,10 @@ function show(toCount) {
         
         for(let i=0;i<doneList.length;i++) {
             process.stdout.write(`'${doneList[i]}'`);
+
+            if(i != todoList.length - 1) {
+                process.stdout.write(' , ')
+            }
         }
 
         console.log('')
