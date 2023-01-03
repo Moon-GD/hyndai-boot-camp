@@ -24,39 +24,31 @@ function show(toCount) {
     else if(toCount === "todo") {
         process.stdout.write(`todo리스트 : 총${todoList.length}건 : `);
         
-        for(let i=0;i<todoList.length;i++) {
-            process.stdout.write(`'${todoList[i]}'`);
-
-            if(i != todoList.length - 1) {
-                process.stdout.write(' , ')
-            }
+        for(let i=0;i<todoList.length - 1;i++) {
+            process.stdout.write(`'${todoList[i]}' , `);
         }
+        process.stdout.write(`'${todoList[todoList.length - 1]}'`);
 
         console.log('')
     }
     else if(toCount === "doing") {
         process.stdout.write(`doing리스트 : 총${doingList.length}건 : `);
         
-        for(let i=0;i<doingList.length;i++) {
-            process.stdout.write(`'${doingList[i]}'`);
-
-            if(i != todoList.length - 1) {
-                process.stdout.write(' , ')
-            }
+        for(let i=0;i<doingList.length - 1;i++) {
+            process.stdout.write(`'${doingList[i]}' , `);
         }
+        process.stdout.write(`'${doingList[doingList.length - 1]}'`);
 
         console.log('')
     }
     else if(toCount === "done") {
         process.stdout.write(`done리스트 : 총${doneList.length}건 : `);
         
-        for(let i=0;i<doneList.length;i++) {
-            process.stdout.write(`'${doneList[i]}'`);
-
-            if(i != todoList.length - 1) {
-                process.stdout.write(' , ')
-            }
+        for(let i=0;i<doneList.length - 1;i++) {
+            process.stdout.write(`'${doneList[i]}' , `);
         }
+
+        process.stdout.write(`'${doneList[doneList.length - 1]}'`);
 
         console.log('')
     }
