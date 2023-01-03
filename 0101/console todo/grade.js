@@ -54,6 +54,7 @@ reader.on("close",function(){
 })
 
 // 참고 부분
+// readline의 question 함수를 통해 무한 반복하는 방법s
 /*
 onst readline = require("readline");
 
