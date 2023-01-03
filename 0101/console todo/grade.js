@@ -45,6 +45,7 @@ reader.on("line", (line) => {
             console.log("잘못된 입력입니다. 올바르게 입력해주세요. ");
         }
     }
+    
     reader.prompt();
 });
 
