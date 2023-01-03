@@ -22,26 +22,28 @@ reader.on("line", (line) => {
         if(inputWords[0]=='show'){
             showRes.show(inputWords[1]);
         }
-        else{
-            // 보완 사항 : 이상한 입력 값이 들어와도 show$all 이 수행된다
-            // delete
-            if(inputWords[0]=='delete'){
-                const deleteRes = require('./delete');
-                deleteRes.idelete(inputWords[1]);
-            }
-            // update
-            else if(inputWords[0] === 'update') {
-                const updateRes = require("./update");
-                updateRes.update(inputWords[1], inputWords[2]);
-            }
-            // add
-            else if(inputWords[0] === 'add'){
-                const addRes = require("./add");
-                addRes.addlist(inputWords[1], inputWords[2]);
-            }
+        // delete
+        else if(inputWords[0]=='delete'){
+            const deleteRes = require('./delete');
+            deleteRes.idelete(inputWords[1]);
             showRes.show("all");
         }
-        
+        // update
+        else if(inputWords[0] === 'update') {
+            const updateRes = require("./update");
+            updateRes.update(inputWords[1], inputWords[2]);
+            showRes.show("all");
+        }
+        // add
+        else if(inputWords[0] === 'add'){
+            const addRes = require("./add");
+            addRes.addlist(inputWords[1], inputWords[2]);
+            showRes.show("all");
+        }
+        // except case
+        else {
+            console.log("잘못된 입력입니다. 올바르게 입력해주세요. ");
+        }
     }
     reader.prompt();
 });
